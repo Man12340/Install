@@ -10,31 +10,21 @@ apt-get install -y --reinstall \
   python3-testresources \
   python-dev \
   python-pip
-python3 -m pip install --disable-pip-version-check --upgrade --force-reinstall pip==19.1.1
+python3 -m pip install --disable-pip-version-check --upgrade --force-reinstall pip==22.3.1
 python3 -m pip install --disable-pip-version-check --upgrade --force-reinstall setuptools
 python3 -m pip install --disable-pip-version-check --upgrade --force-reinstall \
   pyOpenSSL \
   requests \
   netaddr \
   lxml
-python -m pip install --disable-pip-version-check --upgrade --force-reinstall pip==19.1.1
-python -m pip install --disable-pip-version-check --upgrade --force-reinstall setuptools
-python -m pip install --disable-pip-version-check --upgrade --force-reinstall \
-  pyOpenSSL \
-  requests \
-  netaddr \
-  lxml
-python -m pip install --disable-pip-version-check --upgrade --force-reinstall ansible==${1-2.8.2}
+python3 -m pip install --disable-pip-version-check --upgrade --force-reinstall ansible==${1-2.8.2}
 
-pip install -U --force-reinstall pip==9.0.3
-pip3 install -U --force-reinstall pip==9.0.3
-pip install --upgrade --force-reinstall pip==9.0.3
-pip install --upgrade pip
-pip install docker-py --ignore-installed PyYAML
+pip3 install -U --force-reinstall pip==22.3.1
+pip3 install --upgrade pip
+pip3 install docker-py --ignore-installed PyYAML
 
 
 ## Copy pip to /usr/bin
-cp /usr/local/bin/pip /usr/bin/pip
 cp /usr/local/bin/pip3 /usr/bin/pip3
 
 mkdir -p /etc/ansible/inventories/ 1>/dev/null 2>&1

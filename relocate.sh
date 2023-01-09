@@ -7,8 +7,8 @@
 ################################################################################
 ### FUNCTIONS START #####################################################
 ###################################
-old=https://github.com/PTS-Team/
-new=https://github.com/MHA-Team/
+old=https://github.com/MHA-Team/
+new=https://github.com/Man12340
 
 sudocheck() {
     if [[ $EUID -ne 0 ]]; then

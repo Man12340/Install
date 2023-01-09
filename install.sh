@@ -220,14 +220,14 @@ tee <<-EOF
 ⌛  Base Install - Standby  || This may take a few minuets. Grab a Coffee!
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EOF
-versioncheck=$(cat /etc/*-release | grep "Ubuntu" | grep -E '19')
-  if [[ "$versioncheck" == "19" ]]; then
+versioncheck=$(cat /etc/*-release | grep "Ubuntu" | grep -E '22')
+  if [[ "$versioncheck" == "22" ]]; then
 tee <<-EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ⛔ WOAH! ......  System OS Warning!
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Supported: UBUNTU 16.xx - 18.10 ~ LTS/SERVER and Debian 9.* / 10
+Supported: UBUNTU 16.xx - 20 ~ LTS/SERVER and Debian 9.* / 10
 
 This server may not be supported due to having the incorrect OS detected!
 
@@ -247,7 +247,7 @@ if [[ $(lsb_release -si) == "Debian" ]]; then
 	add-apt-repository main >/dev/null 2>&1
 	add-apt-repository non-free >/dev/null 2>&1
 	add-apt-repository contrib >/dev/null 2>&1
-	wget -qN https://raw.githubusercontent.com/MHA-Team/Install/master/source/ansible-debian-ansible.list /etc/apt/sources.list.d/
+	wget -qN https://raw.githubusercontent.com/Man12340/Install/master/source/ansible-debian-ansible.list  list /etc/apt/sources.list.d/
 elif [[ $(lsb_release -si) == "Ubuntu" ]]; then
 	add-apt-repository main >/dev/null 2>&1
 	add-apt-repository universe >/dev/null 2>&1
@@ -312,8 +312,8 @@ rm -rf /opt/pgstage/place.holder >/dev/null 2>&1
 edition=master
 ##fast change the editions
 echo -ne '#######                   (30%)\r'
-git clone -b $edition --single-branch https://github.com/MHA-Team/Install.git /opt/pgstage 1>/dev/null 2>&1
-git clone https://github.com/MHA-Team/PTS-Update.git /opt/ptsupdate 1>/dev/null 2>&1
+git clone -b $edition --single-branch https://github.com/Man12340/Install.git /opt/pgstage 1>/dev/null 2>&1
+git clone https://github.com/Man12340/Install.git /opt/ptsupdate 1>/dev/null 2>&1
 echo -ne '##########                (40%)\r'
 mkdir -p /var/plexguide/logs
 echo "" >/var/plexguide/server.ports
